@@ -172,7 +172,7 @@ public class Individual{ // implements Comparable {
         - "Schaffer7Function"
     
     RETURN:
-    double value, Namely Fitness of Individual a minus Fitness of Individual b.
+    double value, namely Fitness of Individual 'a' minus Fitness of Individual 'b'.
     */
     
     public static double compare(Individual a, Individual b, String functionName){

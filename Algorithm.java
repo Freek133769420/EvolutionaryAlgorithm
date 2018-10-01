@@ -174,10 +174,5 @@ public class Algorithm {
     private void SelectIndividuals(){
         
     }
-            
-            
-    public void run(){
-        
-    }
-    
+              
 }

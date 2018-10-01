@@ -58,7 +58,7 @@ public class player0 implements ContestSubmission
                 System.out.printf("Coordinates:" + Arrays.toString(child.getCoordinates()) +"\n");
             }
             Functions.evaluate(child2, functionName);
-            double maxValue = Functions.evaluate(functionName);
+            double maxValue = Functions.getMaxValue(functionName);
             System.out.printf("The best value for " + functionName + " is: %f", maxValue);
         }
         
@@ -94,29 +94,23 @@ public class player0 implements ContestSubmission
 	public void run()
 	{
 		// Run your algorithm here
-        System.out.println("Tset");
+        System.out.println("Test");
         int evals = 0;
+        
         // init population
-        Population population = new Population(1);
-        // double[] fitnessArray = population.getFitness("BentCigarFunction");
+        Population population = new Population(100);
         
         double Fitness;
         double newFitness = 0;
-        // Individual child = new Individual();
-        // Fitness = (double) evaluation_.evaluate(child.getCoordinates());
         
-        Individual child2 = new Individual();
-        child2.setCoordinates(new double[]{0.0,0.1,0.0,0.1,0.0,0.0,0.0,0.0,0.0,-5.0});
+        Individual child = new Individual();
+        child.setCoordinates(new double[]{0.0,0.1,0.0,0.1,0.0,0.0,0.0,0.0,0.0,-5.0});
         
-        Fitness = (double) evaluation_.evaluate(child2.getCoordinates());
+        Fitness = (double) evaluation_.evaluate(child.getCoordinates());
         
         for(int i=0; i< population.size(); i++){
-            Individual child = population.getIndividual(i);
-            //child.setCoordinates(double[]{0,0,0,0,0,0,0,0,0,0});
-            //double newFitness = (double) evaluation_.evaluate(child.getCoordinates());
-            Fitness = (double) evaluation_.evaluate(child.getCoordinates());
-            newFitness = java.lang.Math.max(newFitness, Fitness);
-            //System.out.printf("NewFitness: %d\nCoordinates" + Arrays.toString(child.getCoordinates()),newFitness);
+            Individual child2 = population.getIndividual(i);
+            Fitness = (double) evaluation_.evaluate(child2.getCoordinates());
         }
         
         
